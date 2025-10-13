@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | Bison Technology Solutions</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        nav {
+            background-color: #222;
+            padding: 1em;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-links {
+                width: 100%;
+                display: none;
+                flex-direction: column;
+                align-items: flex-start;
+                padding-top: 10px;
+            }
+
+            .nav-links a {
+                margin: 10px 0;
+                padding: 10px;
+                width: 100%;
+                background-color: #333;
+                border-top: 1px solid #444;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-left img {
+            height: 40px;
+            margin-right: 15px;
+        }
+
+        .nav-links a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #00cc66;
+        }
+
+        h1,
+        h2 {
+            color: #0d7a4e;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .contact-header p {
+            text-align: center;
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        .contact-form-section {
+            max-width: 600px;
+            margin: 40px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        form label {
+            display: block;
+            margin: 15px 0 5px;
+            font-weight: bold;
+        }
+
+        form input,
+        form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1em;
+        }
+
+        form textarea {
+            resize: vertical;
+        }
+
+        .btn {
+            margin-top: 20px;
+            background-color: #130081;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0a5c3b;
+        }
+
+        .contact-info {
+            max-width: 600px;
+            margin: 0 auto 50px;
+            text-align: center;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        iframe {
+            display: block;
+            margin: 0 auto 50px;
+            width: 90%;
+            max-width: 800px;
+            height: 350px;
+            border: none;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 600px) {
+            .nav-links {
+                width: 100%;
+                text-align: center;
+                margin-top: 10px;
+            }
+
+            .nav-links a {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .contact-form-section,
+            .contact-info {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-left">
+            <img src="BTS-Logo.png" alt="Bison Technology Solutions Logo">
+            <span style="color:white; font-size: 1.2em; font-weight: bold;">Bison Technology Solutions</span>
+        </div>
+
+        <!-- Hamburger Icon -->
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Contact Header -->
+    <header class="contact-header">
+        <h1>Get in Touch</h1>
+        <p>Have a question or need support? We're here to help.</p>
+    </header>
+
+    <!-- Contact Form -->
+    <section class="contact-form-section">
+        <form action="mailto:youremail@example.com" method="POST" enctype="text/plain">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required />
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Contact Details -->
+    <section class="contact-info">
+        <h2>Contact Information</h2>
+        <p><strong>Phone:</strong> (208) 948-2343</p>
+        <p><strong>Email:</strong> info@bisontechsolutions.com</p>
+        <p><strong>Location:</strong> West Valley City, Utah</p>
+    </section>
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.903106998189!2d-111.95210712431813!3d40.69668327139408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87528728253f0edb%3A0xb3dbd4efc011373f!2sWest%20Valley%20City%2C%20UT!5e0!3m2!1sen!2sus!4v1691228575055!5m2!1sen!2sus"
+        allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    </div>
+</body>
+<script>
+    function toggleMenu() {
+        const nav = document.getElementById('navLinks');
+        nav.classList.toggle('active');
+    }
+</script>
+
+</html>

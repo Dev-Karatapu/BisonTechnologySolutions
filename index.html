@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | Bison Technology Solutions</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #222;
+      padding: 1em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-left img {
+      height: 40px;
+      margin-right: 15px;
+    }
+
+    .nav-links a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #00ffcc;
+      font-size: 1.2em;
+    }
+
+    .hero {
+      position: relative;
+      height: 400px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+    .hero-blur {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('hero-image.jpg');
+      /* replace with your image path */
+      background-size: cover;
+      background-position: center;
+      filter: blur(8px);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero h2 {
+      font-size: 2.5em;
+      margin: 0 0 20px;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      max-width: 600px;
+    }
+
+    .hero h2 {
+      font-size: 36px;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      /* Soft shadow */
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: white;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+      /* Light shadow */
+      margin-bottom: 20px;
+    }
+
+
+    .btn {
+      padding: 10px 20px;
+      background-color: #130081;
+      /* Deep blue */
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      /* Add shadow */
+      transition: all 0.3s ease;
+      /* Smooth hover effect */
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+      /* Darker blue on hover */
+    }
+
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px 20px;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      transition: transform 0.3s ease;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      margin: 15px 0 10px;
+    }
+
+    .card p {
+      padding: 0 15px 15px;
+      font-size: 0.95em;
+    }
+
+    .content {
+      padding: 40px 20px;
+    }
+
+    .content img {
+      width: 80%;
+      max-width: 250px;
+    }
+
+    .dm {
+      background-image: url('dm-image.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 100px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .section testimonies {
+      T
+    }
+
+    .testimonial-carousel {
+      width: 100%;
+      max-width: 600px;
+      height: 350px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      background: #fff;
+
+    }
+
+    .testimonial-track {
+      display: flex;
+      width: 100%;
+      transition: transform 0.1s ease-in-out;
+    }
+
+    .testimonial-card {
+      flex: 0 0 100%;
+      /* Each card takes full width of container */
+      padding: 10px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .testimonial-card img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+
+    .testimonial-card h3 {
+      margin-bottom: 10px;
+      color: #130081;
+    }
+
+    .testimonial-card p {
+      font-size: 14px;
+      font-style: italic;
+      color: #333;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .track-inner {
+      display: flex;
+      width: 300%;
+      /* 100% * number of testimonials */
+    }
+
+    .testimonial-card {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+
+
+
+    footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #222;
+      color: white;
+      padding: 40px 20px;
+    }
+
+    .footer-logo {
+      display: block;
+      margin: 0 auto 20px;
+      height: 50px;
+    }
+
+    .footer-info {
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      color: green;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+
+      .nav-links {
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 10px;
+      }
+
+      .nav-links a {
+        margin: 10px 0;
+        padding: 10px;
+        width: 100%;
+        background-color: #333;
+        border-top: 1px solid #444;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+    }
+
+
+    @media (max-width: 600px) {
+      .nav-links a {
+        display: block;
+        margin: 10px 0;
+      }
+
+      .hero h2 {
+        font-size: 1.8em;
+      }
+
+      .hero p {
+        font-size: 1em;
+      }
+
+      .cards {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="nav-left">
+      <img src="BTS-Logo.png" alt="Bison Technology Solutions Logo"><br>
+      <span style="color:white; font-size: 1.2em; font-weight: bold;">Bison Technology Solutions</span>
+    </div>
+
+    <!-- Hamburger Icon -->
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+
+    </div>
+  </nav>
+
+
+  <div class="hero">
+    <div class="hero-blur"></div>
+    <div class="hero-content">
+      <h2>Reliable & Fast IT Solutions</h2>
+      <p>Bison Technology Solutions provides expert support in device repairs, data recovery, cloud migration, and
+        digital marketing — ensuring reliable service for all your IT needs.</p>
+      <button class="btn" onclick="location.href='contact.html'">Contact BTS</button>
+    </div>
+  </div>
+  <Br>
+  <Br>
+  <Br>
+
+  <h2 style="text-align:center;">Our Services</h2>
+  <div class="cards">
+    <div class="card">
+      <img src="dm-image.jpg" alt="Data Recovery">
+      <h3>Digital Marketing</h3>
+      <p>Boost your online presence with our digital marketing services, including SEO, social media management, and
+        targeted advertising strategies.</p>
+    </div>
+    <div class="card">
+      <img src="ts-image.jpg" alt="Larry Christension">
+      <h3>Technical Support</h3>
+      <p>Our technical support team is here to solve your IT issues quickly and efficiently. From troubleshooting
+        devices to system maintenance, we provide reliable assistance to keep your technology running smoothly.</p>
+    </div>
+    <div class="card">
+      <img src="device-support.jpg" alt="Device Support">
+      <h3>Device Support</h3>
+      <p>We repair laptops, phones, and desktops. Quick fixes for hardware and software issues.</p>
+    </div>
+    <div class="card">
+      <img src="data-recovery.jpg" alt="Data Recovery">
+      <h3>Data Recovery</h3>
+      <p>Lost important files? We recover data from damaged or corrupted devices and storage drives.</p>
+    </div>
+    <div class="card">
+      <img src="cloud-migration.jpg" alt="Cloud Migration">
+      <h3>Cloud Migration</h3>
+      <p>Move your business to the cloud with our expert support. Secure, smooth, and scalable solutions.</p>
+    </div>
+
+  </div>
+
+  <div class="dm">
+  </div>
+
+  <!-- Testimonials Section -->
+  <section class="testimonies">
+    <h2 style="text-align:center;">Testimonials</h2>
+    <div class="testimonial-carousel">
+      <div class="testimonial-track">
+        <div class="track-inner">
+          <div class="testimonial-card">
+            <img src="sb-image.jpg" alt="Susan Bird">
+            <h3>Susan Bird</h3>
+            <p>"Bison Technology Solutions helped us move our entire business and website to the cloud, and the
+              experience
+              was seamless. They explained every step clearly, handled everything with care, and completed the migration
+              without any downtime. Their support gave us peace of mind and improved how we work. Truly grateful for
+              their
+              expertise!"
+              — Susan Bird</p>
+          </div>
+          <div class="testimonial-card">
+            <img src="dj-image.jpg" alt="Daug Johnson">
+            <h3>Daug Johnson</h3>
+            <p>"Bison Technology Solutions provided excellent support when I was having trouble with my laptop. The
+              technician was friendly, knowledgeable, and fixed the issue faster than I expected. I’m really impressed
+              with how smooth the whole process was. I highly recommend their service!"
+              — Daug Johnson</p>
+          </div>
+          <div class="testimonial-card">
+            <img src="lc-image.jpg" alt="Larry Christension">
+            <h3>Larry Christension</h3>
+            <p>"BTS has been the really good in help my wife with her device. The tech was quick and responsive. They
+              were
+              able to fix the issue as promissed and in timely manner. I would surely recommend the Bison Technology
+              Solutions
+              for your devices support." - Larry Christension</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+
+  </div>
+
+
+  <footer>
+    <img src="BTS-Logo.png" alt="Bison Technology Solutions Logo" class="footer-logo">
+    <div class="footer-info">
+      <p>123 Tech Street, West Valley City, UT, USA</p>
+      <p>Email: contact@bisontech.com | Phone: +1 (555) 123-4567</p>
+    </div>
+
+</body>
+<script>
+  let index = 0;
+  const track = document.querySelector('.testimonial-track');
+  const cards = document.querySelectorAll('.testimonial-card');
+
+  function slideTestimonials() {
+    index = (index + 1) % cards.length;
+    track.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  setInterval(slideTestimonials, 15000); // Slide every 5 seconds
+
+  function toggleMenu() {
+    const nav = document.getElementById('navLinks');
+    nav.classList.toggle('active');
+  }
+</script>
+
+
+</html>
